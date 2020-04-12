@@ -3,11 +3,7 @@ const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-web
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const main = [
-  'core-js',
-  'whatwg-fetch',
-  './src/index.tsx'
-];
+const main = ['core-js', 'whatwg-fetch', './src/index.tsx'];
 
 module.exports = {
   context: process.cwd(), // to automatically find tsconfig.json
@@ -17,7 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    publicPath: "/"
+    publicPath: '/'
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({
@@ -28,20 +24,18 @@ module.exports = {
       title: 'Project V',
       inject: true,
       template: 'src/index.html'
-    }),
+    })
   ],
   module: {
     rules: [
       {
         test: /.tsx?$/,
-        use: [
-          { loader: 'ts-loader', options: { transpileOnly: true } }
-        ]
+        use: [{ loader: 'ts-loader', options: { transpileOnly: true } }]
       }
     ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: ['.tsx', '.ts', '.js']
   },
   devtool: 'inline-source-map',
   devServer: {

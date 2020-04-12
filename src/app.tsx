@@ -1,13 +1,16 @@
-import React from "react";
+import React from 'react';
+// Components
+import ExchangeRates from './components/ExchangeRate';
 
 interface AppProps {
-  todo: number
+  todo: number;
 }
 
 const App = ({ todo }: AppProps) => {
   return (
     <div>
       {todo}
+      {ExchangeRates()}
     </div>
   );
 };

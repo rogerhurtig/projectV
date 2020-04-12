@@ -2,11 +2,7 @@ const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const main = [
-  'core-js',
-  'whatwg-fetch',
-  './src/index.tsx'
-];
+const main = ['core-js', 'whatwg-fetch', './src/index.tsx'];
 
 module.exports = {
   context: process.cwd(), // to automatically find tsconfig.json
@@ -15,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.join(process.cwd(), 'dist'),
-    filename: '[name].js',
+    filename: '[name].js'
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({
@@ -38,21 +34,19 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
-      },
-    }),
+        minifyURLs: true
+      }
+    })
   ],
   module: {
     rules: [
       {
         test: /.tsx?$/,
-        use: [
-          { loader: 'ts-loader', options: { transpileOnly: true } }
-        ],
+        use: [{ loader: 'ts-loader', options: { transpileOnly: true } }]
       }
     ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: ['.tsx', '.ts', '.js']
   }
 };

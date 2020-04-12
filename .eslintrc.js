@@ -1,10 +1,7 @@
 const path = require('path');
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  plugins: [
-    '@typescript-eslint',
-    'react'
-  ],
+  plugins: ['@typescript-eslint', 'react'],
   env: {
     browser: true,
     jest: true,
