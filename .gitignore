@@ -1,0 +1,11 @@
+.eslintcache
+dist
+coverage
+docs
+node_modules
+npm-debug.log
+yarn-error.log
+output
+release
+config
+.vscode
